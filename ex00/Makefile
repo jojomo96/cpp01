@@ -1,5 +1,8 @@
-NAME = phonebook
-CXX = c++
+# Get the directory name
+DIR_NAME = $(notdir $(CURDIR))
+
+# Use the directory name as the executable name
+NAME = cpp_01_$(DIR_NAME)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = $(wildcard *.cpp)
 OBJS = $(patsubst %.cpp,obj/%.o,$(SRCS))
