@@ -3,9 +3,10 @@
 #include "Zombie.h"
 
 void randomChump(std::string name);
+
 Zombie *newZombie(std::string name);
 
-int main(){
+int main() {
     Zombie *zombie;
 
     zombie = newZombie("John");
