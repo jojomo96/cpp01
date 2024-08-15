@@ -1,9 +1,10 @@
 # Get the directory name
 DIR_NAME = $(notdir $(CURDIR))
 
+CXX = c++
 # Use the directory name as the executable name
 NAME = cpp_01_$(DIR_NAME)
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 SRCS = $(wildcard *.cpp)
 OBJS = $(patsubst %.cpp,obj/%.o,$(SRCS))
 DEPS = $(patsubst %.cpp,obj/%.d,$(SRCS))

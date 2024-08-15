@@ -1,44 +1,39 @@
-
 #include <iostream>
 #include "Harl.h"
 
-Harl::Harl() {
+Harl::Harl() = default;
 
-}
-
-Harl::~Harl() {
-
-}
+Harl::~Harl() = default;
 
 void Harl::complain(std::string level) {
-    Level levels[] = {
-            {"debug",   &Harl::debug},
-            {"info",    &Harl::info},
-            {"warning", &Harl::warning},
-            {"error",   &Harl::error}
-    };
+	Level levels[] = {
+		{"debug", &Harl::debug},
+		{"info", &Harl::info},
+		{"warning", &Harl::warning},
+		{"error", &Harl::error}
+	};
 
-    for (int i = 0; i < 4; i++) {
-        if (levels[i].level == level) {
-            (this->*levels[i].func)();
-            return;
-        }
-    }
-    std::cout << "Unknown level: " << level << std::endl;
+	for (auto &[l, func]: levels) {
+		if (l == level) {
+			(this->*func)();
+			return;
+		}
+	}
+	std::cout << "Unknown level: " << level << std::endl;
 }
 
 void Harl::debug(void) {
-    std::cout << "Debug" << std::endl;
+	std::cout << "Debug" << std::endl;
 }
 
 void Harl::info(void) {
-    std::cout << "Info" << std::endl;
+	std::cout << "Info" << std::endl;
 }
 
 void Harl::warning(void) {
-    std::cout << "Warning" << std::endl;
+	std::cout << "Warning" << std::endl;
 }
 
 void Harl::error(void) {
-    std::cout << "Error" << std::endl;
+	std::cout << "Error" << std::endl;
 }

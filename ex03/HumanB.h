@@ -7,7 +7,7 @@
 
 class HumanB {
 public:
-    HumanB(const std::string &name);
+    explicit HumanB(const std::string &name);
 
     ~HumanB();
 

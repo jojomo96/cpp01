@@ -2,11 +2,10 @@
 #include <iostream>
 #include "HumanB.h"
 
-HumanB::HumanB(const std::string &name) : name(name), weapon(NULL) {
+HumanB::HumanB(const std::string &name) : name(name), weapon(nullptr) {
 }
 
-HumanB::~HumanB() {
-}
+HumanB::~HumanB() = default;
 
 void HumanB::setWeapon(Weapon &weapon) {
     this->weapon = &weapon;

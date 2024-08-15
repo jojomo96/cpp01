@@ -7,11 +7,11 @@
 
 class Weapon {
 public:
-    Weapon(const std::string &type);
+    explicit Weapon(const std::string &type);
 
     ~Weapon();
 
-    const std::string &getType() const;
+    [[nodiscard]] const std::string &getType() const;
 
     void setType(const std::string &type);
 

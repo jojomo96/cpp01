@@ -8,13 +8,9 @@ struct Level {
     void (Harl::*func)(void);
 };
 
-Harl::Harl() {
+Harl::Harl() = default;
 
-}
-
-Harl::~Harl() {
-
-}
+Harl::~Harl() = default;
 
 void Harl::complain(std::string level) {
     Level levels[] = {
@@ -24,9 +20,9 @@ void Harl::complain(std::string level) {
             {"error",   &Harl::error}
     };
 
-    for (int i = 0; i < 4; i++) {
-        if (levels[i].level == level) {
-            (this->*levels[i].func)();
+    for (auto &[l, func] : levels) {
+        if (l == level) {
+            (this->*func)();
             return;
         }
     }
