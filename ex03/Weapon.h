@@ -1,4 +1,3 @@
-
 #ifndef CPP01_WEAPON_H
 #define CPP01_WEAPON_H
 
@@ -7,16 +6,16 @@
 
 class Weapon {
 public:
-    explicit Weapon(const std::string &type);
+	explicit Weapon(const std::string &type);
 
-    ~Weapon();
+	~Weapon();
 
-    [[nodiscard]] const std::string &getType() const;
+	[[nodiscard]] const std::string &getType() const;
 
-    void setType(const std::string &type);
+	void setType(const std::string &type);
 
 private:
-    std::string type;
+	std::string type;
 };
 
 

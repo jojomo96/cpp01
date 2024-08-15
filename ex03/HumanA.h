@@ -1,4 +1,3 @@
-
 #ifndef CPP01_HUMANA_H
 #define CPP01_HUMANA_H
 
@@ -6,15 +5,15 @@
 
 class HumanA {
 public:
-    HumanA(std::string name, Weapon &weapon);
+	HumanA(std::string name, Weapon &weapon);
 
-    ~HumanA();
+	~HumanA();
 
-    void attack();
+	void attack();
 
 private:
-    std::string name;
-    Weapon &weapon;
+	std::string name;
+	Weapon &weapon;
 };
 
 

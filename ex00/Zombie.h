@@ -4,16 +4,16 @@
 
 class Zombie {
 public:
-    Zombie();
+	Zombie();
 
-    ~Zombie();
+	~Zombie();
 
-    void announce();
+	void announce();
 
-    void setName(std::string name);
+	void setName(std::string name);
 
 private:
-    std::string name;
+	std::string name;
 };
 
 #endif //CPP01_ZOMBIE_H

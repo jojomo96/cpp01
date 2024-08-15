@@ -2,8 +2,8 @@
 #include "Zombie.h"
 
 void randomChump(std::string name) {
-    Zombie zombie;
+	Zombie zombie;
 
-    zombie.setName(name);
-    zombie.announce();
+	zombie.setName(name);
+	zombie.announce();
 }

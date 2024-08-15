@@ -2,7 +2,7 @@
 #include "Zombie.h"
 
 Zombie *newZombie(std::string name) {
-    auto *zombie = new Zombie();
-    zombie->setName(name);
-    return zombie;
+	auto zombie = std::make_unique<Zombie>();
+	zombie->setName(name);
+	return zombie.release();
 }

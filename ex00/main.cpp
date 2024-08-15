@@ -1,4 +1,3 @@
-
 #include <string>
 #include "Zombie.h"
 
@@ -6,15 +5,16 @@ void randomChump(std::string name);
 
 Zombie *newZombie(std::string name);
 
-int main() {
-    auto *zombie = newZombie("John");
-    zombie->announce();
-    delete zombie;
+int main() { {
+		const std::unique_ptr<Zombie> zombie(newZombie("John"));
+		zombie->announce();
+	} // `zombie` is automatically deleted here
 
-    auto *zombie2 = new Zombie();
-    zombie2->announce();
-    delete zombie2;
+	{
+		const std::unique_ptr<Zombie> zombie2(new Zombie());
+		zombie2->announce();
+	} // `zombie2` is automatically deleted here
 
-    randomChump("Mary");
-    return 0;
+	randomChump("Mary");
+	return 0;
 }
